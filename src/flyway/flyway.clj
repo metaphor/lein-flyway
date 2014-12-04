@@ -13,5 +13,20 @@
     (.. f (setDataSource (dataSource config)))
     f))
 
-(defn dump-info [flyway]
-  (-> flyway .info .all MigrationInfoDumper/dumpToAsciiTable))
+(defn clean [flyway]
+  (-> flyway .clean))
+
+(defn baseline [flyway]
+  (-> flyway .baseline))
+
+(defn validate [flyway]
+  (-> flyway .validate))
+
+(defn repair [flyway]
+  (-> flyway .repair))
+
+(defn migrate [flyway]
+  (-> flyway .migrate))
+
+(defn info [flyway]
+  (println (-> flyway .info .all MigrationInfoDumper/dumpToAsciiTable)))
