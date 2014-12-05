@@ -7,14 +7,14 @@
     (eval-in-project
      (update-in project [:dependencies] conj ['lein-flyway "0.1.0-SNAPSHOT"])
      `(do
-        (let [flyway# (flyway.flyway/flyway ~config)]
+        (let [flyway# (fw/flyway ~config)]
           (case ~subtask-keyword
-            :clean (flyway.flyway/clean flyway#)
-            :baseline (flyway.flyway/baseline flyway#)
-            :validate (flyway.flyway/validate flyway#)
-            :migrate (flyway.flyway/migrate flyway#)
-            :info (flyway.flyway/info flyway#)
-            :repair (flyway.flyway/repair flyway#))))
-     '(require 'flyway.flyway))))
+            :clean (fw/clean flyway#)
+            :baseline (fw/baseline flyway#)
+            :validate (fw/validate flyway#)
+            :migrate (fw/migrate flyway#)
+            :info (fw/info flyway#)
+            :repair (fw/repair flyway#))))
+     '(require '[flyway.flyway :as fw]))))
 
 
