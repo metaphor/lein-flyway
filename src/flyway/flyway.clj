@@ -15,9 +15,15 @@
                        password
                        (make-array java.lang.String 0))))
 
+(defn- set-locations [flyway config]
+  (if-let [locations (:locations config)]
+    (. flyway setLocations (into-array locations))))
+
 (defn flyway [config]
   (let [f (Flyway.)]
-    (.. f (setDataSource (dataSource config)))
+    (do
+      (. f (setDataSource (dataSource config)))
+      (set-locations f config))
     f))
 
 (defn clean [flyway]
@@ -37,3 +43,4 @@
 
 (defn info [flyway]
   (println (MigrationInfoDumper/dumpToAsciiTable (.. flyway info all))))
+
