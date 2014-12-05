@@ -21,19 +21,19 @@
     f))
 
 (defn clean [flyway]
-  (-> flyway .clean))
+  (. flyway clean))
 
 (defn baseline [flyway]
-  (-> flyway .baseline))
+  (. flyway baseline))
 
 (defn validate [flyway]
-  (-> flyway .validate))
+  (. flyway validate))
 
 (defn repair [flyway]
-  (-> flyway .repair))
+  (. flyway repair))
 
 (defn migrate [flyway]
-  (-> flyway .migrate))
+  (. flyway migrate))
 
 (defn info [flyway]
-  (println (-> flyway .info .all MigrationInfoDumper/dumpToAsciiTable)))
+  (println (MigrationInfoDumper/dumpToAsciiTable (.. flyway info all))))
