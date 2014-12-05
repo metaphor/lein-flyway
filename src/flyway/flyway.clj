@@ -3,10 +3,17 @@
            [org.flywaydb.core.internal.util.jdbc DriverDataSource]
            [org.flywaydb.core.internal.info MigrationInfoDumper]))
 
+(defn- contextClassLoader []
+  (.getContextClassLoader (Thread/currentThread)))
+
 (defn- dataSource [config]
-  (let [{:keys [driver url username password]} config
-        clazzLoader (.getContextClassLoader (Thread/currentThread))]
-    (DriverDataSource. clazzLoader driver url username password (make-array java.lang.String 0))))
+  (let [{:keys [driver url username password]} config]
+    (DriverDataSource. (contextClassLoader)
+                       driver
+                       url
+                       username
+                       password
+                       (make-array java.lang.String 0))))
 
 (defn flyway [config]
   (let [f (Flyway.)]
