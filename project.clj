@@ -4,5 +4,4 @@
   :min-lein-version "2.0.0"
   :eval-in :leiningen
 
-  :dependencies [[org.flywaydb/flyway-core "3.1"]
-                 [mysql/mysql-connector-java "5.1.34"]])
+  :dependencies [[org.flywaydb/flyway-core "3.1"]])
