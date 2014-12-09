@@ -23,7 +23,13 @@
   (let [f (Flyway.)]
     (do
       (. f (setDataSource (dataSource config)))
-      (set-locations f config))
+      (set-locations f config)
+      (when-let [baseline-desc (:baseline-description config)]
+        (. f setBaselineDescription baseline-desc))
+      (when-let [baseline-version (:baseline-version config)]
+        (. f setBaselineVersion baseline-version))
+      (when-let [baseline-on-migrate (:baseline-on-migrate config)]
+        (. f setBaselineOnMigrate baseline-on-migrate)))
     f))
 
 (defn clean [flyway]

@@ -19,5 +19,10 @@
            :password ""
 
            ;; Migration locations
-           :locations ["db/other/location"]}
+           :locations ["db/other/location"]
+
+           ;; Baseline
+           :baseline-on-migrate false
+           :baseline-version 0
+           :baseline-description "Sample Migration"}
   )
