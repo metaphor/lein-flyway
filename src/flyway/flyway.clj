@@ -1,4 +1,5 @@
 (ns flyway.flyway
+  (:require [clojure.string :as str])
   (:import [org.flywaydb.core Flyway]
            [org.flywaydb.core.internal.util.jdbc DriverDataSource]
            [org.flywaydb.core.internal.info MigrationInfoDumper]))
@@ -15,6 +16,16 @@
                        password
                        (make-array java.lang.String 0))))
 
+(defn to-setter [key]
+  (str/join (cons "set" (map str/capitalize (str/split (name key) #"-")))))
+
+(defn invoke-setter [fw key & args]
+  (clojure.lang.Reflector/invokeInstanceMethod fw (to-setter key) (to-array args)))
+
+(defn set-prop [fw key config]
+  (when-let [value (key config)]
+    (invoke-setter fw key value)))
+
 (defn- set-locations [flyway config]
   (if-let [locations (:locations config)]
     (. flyway setLocations (into-array locations))))
@@ -24,12 +35,9 @@
     (do
       (. f (setDataSource (dataSource config)))
       (set-locations f config)
-      (when-let [baseline-desc (:baseline-description config)]
-        (. f setBaselineDescription baseline-desc))
-      (when-let [baseline-version (:baseline-version config)]
-        (. f setBaselineVersion baseline-version))
-      (when-let [baseline-on-migrate (:baseline-on-migrate config)]
-        (. f setBaselineOnMigrate baseline-on-migrate)))
+      (set-prop f :baseline-version config)
+      (set-prop f :baseline-description config)
+      (set-prop f :baseline-on-migrate config))
     f))
 
 (defn clean [flyway]
@@ -49,4 +57,8 @@
 
 (defn info [flyway]
   (println (MigrationInfoDumper/dumpToAsciiTable (.. flyway info all))))
+
+
+
+
 
