@@ -8,6 +8,12 @@ This plugin is alpha version, expecting defects.
 
 ##Usage
 
+### Dependencies
+
+```clojure
+:plugins [[com.github.metaphor/lein-flyway "3.1-SNAPSHOT"]]
+```
+
 ### Configuration
 lein-flyway tries to align with offical configuration properties, please refer to [sample.project.clj](https://github.com/metaphor/lein-flyway/blob/master/sample.project.clj) for configuration details.
 
