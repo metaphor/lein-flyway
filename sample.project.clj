@@ -15,7 +15,7 @@
            ;; Database connection
            :driver "com.mysql.jdbc.Driver"
            :url "jdbc:mysql://localhost/happyzoo"
-           :username "root"
+           :user "root"
            :password ""
 
            ;; Migration locations

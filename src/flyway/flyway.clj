@@ -27,11 +27,11 @@
   (.getContextClassLoader (Thread/currentThread)))
 
 (defn- dataSource [config]
-  (let [{:keys [driver url username password]} config]
+  (let [{:keys [driver url user password]} config]
     (DriverDataSource. (contextClassLoader)
                        driver
                        url
-                       username
+                       user
                        password
                        (make-array java.lang.String 0))))
 
@@ -39,7 +39,7 @@
   (str/join (cons "set" (map str/capitalize (str/split (name key) #"-")))))
 
 (defn- invoke-setter [fw key & args]
-  (clojure.lang.Reflector/invokeInstanceMember (to-setter key) fw (into-array args)))
+v  (clojure.lang.Reflector/invokeInstanceMember (to-setter key) fw (into-array args)))
 
 (defn- set-prop [fw key value]
   (when-let [the-value value]
