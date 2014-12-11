@@ -2,8 +2,9 @@
   :description "sample"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
-  :dependencies [[org.clojure/clojure "1.7.0-alpha3"]
-                 [mysql/mysql-connector-java "5.1.34"]]
+  :dependencies [[org.clojure/clojure "1.7.0-alpha3"]]
+
+  :profiles {:dev {:dependencies [[mysql/mysql-connector-java "5.1.34"]]}}
 
   ;; Usually you need put your migrations in resource classpath
   :resource-paths ["src-resources"]
