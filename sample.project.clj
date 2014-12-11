@@ -19,10 +19,26 @@
            :password ""
 
            ;; Migration locations
-           :locations ["db/other/location"]
+           :locations ["classpath:/migration1", "migrations2", "filesystem:/sql-migrations"]
 
            ;; Baseline
-           :baseline-on-migrate false
-           :baseline-version 0
-           :baseline-description "Sample Migration"}
+           :baseline-on-migrate true
+           :baseline-version 5
+           :baseline-description "Sample Migration"
+
+           :table "my_schema_versions"
+
+           :sql-migration-prefix "V"
+           :sql-migration-separator "__"
+           :sql-migration-suffix ".sql"
+           :encoding "UTF-8"
+           :placeholders ""
+           :placeholder-prefix "${"
+           :placeholder-suffix  "}"
+           :resolvers  ['com.mycompany.proj.CustomResolver', 'com.mycompany.proj.AnotherResolver']
+           :callbacks ['com.mycompany.proj.CustomCallback', 'com.mycompany.proj.AnotherCallback']
+           :target "1.1"
+           :out-of-order false
+           :validate-on-migrate true
+           :clean-on-validation-error false}
   )
