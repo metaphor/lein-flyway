@@ -1,7 +1,21 @@
-(ns leiningen.flyway
+(ns  leiningen.flyway
+  "Leiningen plugin for Flyway 
+  
+  run: lein flyway [subtask]
+
+  available subtasks: 
+  
+  clean
+  baseline
+  migrate
+  info
+  validate
+  repair"
   (:require [leiningen.core.eval :refer [eval-in-project]]))
 
-(defn flyway [project subtask & args]
+(defn flyway
+  
+  [project subtask]
   (let [config (:flyway project)
         subtask-keyword (keyword subtask)]
     (eval-in-project
