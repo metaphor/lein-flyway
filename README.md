@@ -8,8 +8,24 @@ This plugin is alpha version, expecting defects.
 
 ##Usage
 
+### Configuration
 lein-flyway tries to align with offical configuration properties, please refer to [sample.project.clj](https://github.com/metaphor/lein-flyway/blob/master/sample.project.clj) for configuration details.
 
+### Leiningen Tasks
+
+
+```shell
+>lein flyway ${subtask}
+
+```
+And *subtask* includes following flyway aligned tasks,
+
+* clean
+* validate
+* migrate
+* baseline
+* repair
+* info
 
 ##LICENSE
 
