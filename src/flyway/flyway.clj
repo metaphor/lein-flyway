@@ -8,6 +8,7 @@
                                       :baseline-description
                                       :locations
                                       :table
+                                      :schemas
                                       :sql-migration-prefix
                                       :sql-migration-separator
                                       :sql-migration-suffix

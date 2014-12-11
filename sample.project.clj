@@ -19,6 +19,7 @@
            :user "root"
            :password ""
 
+           :schemas ["schema1" "schema2"]
            ;; Migration locations
            :locations ["classpath:/migration1", "migrations2", "filesystem:/sql-migrations"]
 
