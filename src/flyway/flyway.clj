@@ -39,7 +39,7 @@
   (str/join (cons "set" (map str/capitalize (str/split (name key) #"-")))))
 
 (defn- invoke-setter [fw key & args]
-v  (clojure.lang.Reflector/invokeInstanceMember (to-setter key) fw (into-array args)))
+  (clojure.lang.Reflector/invokeInstanceMember (to-setter key) fw (into-array args)))
 
 (defn- set-prop [fw key value]
   (when-let [the-value value]
