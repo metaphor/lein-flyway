@@ -2,7 +2,9 @@
 
 ##Intro
 
-Leiningen Plugin for Database Migration Tool [Flyway](http://flywaydb.org/) 
+Leiningen Plugin for Database Migration Tool [Flyway](http://flywaydb.org/).
+
+This plugin is alpha version, expecting defects.
 
 ##Usage
 

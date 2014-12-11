@@ -16,5 +16,3 @@
             :info (fw/info flyway#)
             :repair (fw/repair flyway#))))
      '(require '[flyway.flyway :as fw]))))
-
-
