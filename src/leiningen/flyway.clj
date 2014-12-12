@@ -1,9 +1,9 @@
-(ns  leiningen.flyway
-  "Leiningen plugin for Flyway"
+(ns leiningen.flyway
   (:require [leiningen.core.eval :refer [eval-in-project]]))
 
 (defn flyway
-  
+  "Run the flyway plugin."
+  {:help-arglists '([clean baseline migrate info validate repair])}
   [project subtask]
   (let [config (:flyway project)
         subtask-keyword (keyword subtask)]
