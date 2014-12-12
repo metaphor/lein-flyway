@@ -21,7 +21,7 @@
 
            :schemas ["schema1" "schema2"]
            ;; Migration locations
-           :locations ["classpath:/migration1", "migrations2", "filesystem:/sql-migrations"]
+           :locations ["classpath:/migration1" "migrations2" "filesystem:/sql-migrations"]
 
            ;; Baseline
            :baseline-on-migrate true
@@ -34,13 +34,13 @@
            :sql-migration-separator "__"
            :sql-migration-suffix ".sql"
            :encoding "UTF-8"
-           :placeholders ""
+           :placeholders {"token1" "token1-value"
+                          "token2" "token2-value"}
            :placeholder-prefix "${"
            :placeholder-suffix  "}"
-           :resolvers  ['com.mycompany.proj.CustomResolver', 'com.mycompany.proj.AnotherResolver']
-           :callbacks ['com.mycompany.proj.CustomCallback', 'com.mycompany.proj.AnotherCallback']
+           :resolvers  ['com.mycompany.proj.CustomResolver' 'com.mycompany.proj.AnotherResolver']
+           :callbacks ['com.mycompany.proj.CustomCallback' 'com.mycompany.proj.AnotherCallback']
            :target "1.1"
            :out-of-order false
            :validate-on-migrate true
-           :clean-on-validation-error false}
-  )
+           :clean-on-validation-error false})
