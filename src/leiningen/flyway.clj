@@ -19,7 +19,7 @@
   (let [config (:flyway project)
         subtask-keyword (keyword subtask)]
     (eval-in-project
-     (update-in project [:dependencies] conj ['lein-flyway "0.1.0-SNAPSHOT"])
+     (update-in project [:dependencies] conj ['com.github.metaphor/lein-flyway "3.1-SNAPSHOT"])
      `(do
         (let [flyway# (fw/flyway ~config)]
           (case ~subtask-keyword
