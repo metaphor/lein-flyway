@@ -10,6 +10,8 @@
 
   :profiles {:dev {:dependencies [[mysql/mysql-connector-java "5.1.34"]]}}
 
+  :plugins [[cider/cider-nrepl "0.9.0-SNAPSHOT"]]
+
 
   :scm {:url "git@github.com:metaphor/lein-flyway.git"}
   :pom-addition [:developers [:developer
