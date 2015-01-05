@@ -29,12 +29,7 @@
 
 (defn- dataSource [config]
   (let [{:keys [driver url user password]} config]
-    (DriverDataSource. (contextClassLoader)
-                       driver
-                       url
-                       user
-                       password
-                       (make-array java.lang.String 0))))
+    (DriverDataSource. (contextClassLoader) driver url user password (make-array java.lang.String 0))))
 
 (defn- to-setter [key]
   (str/join (cons "set" (map str/capitalize (str/split (name key) #"-")))))
@@ -54,7 +49,7 @@
       (. f (setDataSource (dataSource config)))
       (doseq [config-key supported-config-keys]
         (set-prop f config-key (config-key config))))
-    f))
+    (identity f)))
 
 (defn clean [flyway]
   (. flyway clean))
