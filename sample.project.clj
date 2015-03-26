@@ -9,7 +9,7 @@
   ;; Usually you need put your migrations in resource classpath
   :resource-paths ["src-resources"]
 
-  :plugins [[com.github.metaphor/lein-flyway "1.0"]]
+  :plugins [[com.github.metaphor/lein-flyway "1.1-SNAPSHOT"]]
 
   ;; Flyway Database Migration configuration
   :flyway {
@@ -36,6 +36,7 @@
            :encoding "UTF-8"
            :placeholders {"token1" "token1-value"
                           "token2" "token2-value"}
+           :placeholder-replacement false
            :placeholder-prefix "${"
            :placeholder-suffix  "}"
            :resolvers  ['com.mycompany.proj.CustomResolver' 'com.mycompany.proj.AnotherResolver']

@@ -14,6 +14,7 @@
                                       :sql-migration-suffix
                                       :encoding
                                       :placeholders
+                                      :placeholder-replacement
                                       :placeholder-prefix
                                       :placeholder-suffix
                                       :resolvers
