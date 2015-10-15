@@ -1,4 +1,4 @@
-(defproject com.github.metaphor/lein-flyway "1.1"
+(defproject com.github.metaphor/lein-flyway "1.2-SNAPSHOT"
   :description "Leiningen Plugin for Database Migration Tool Flyway"
   :url "https://github.com/metaphor/lein-flyway"
   :license {:name "Eclipse Public License - v 1.0"
@@ -8,9 +8,9 @@
 
   :dependencies [[org.flywaydb/flyway-core "3.2.1"]]
 
-  :profiles {:dev {:dependencies [[mysql/mysql-connector-java "5.1.34"]]}}
+  :profiles {:dev {:dependencies [[mysql/mysql-connector-java "5.1.36"]]}}
 
-  :plugins [[cider/cider-nrepl "0.9.0-SNAPSHOT"]]
+  :plugins [[cider/cider-nrepl "0.10.0-SNAPSHOT"]]
 
 
   :scm {:url "git@github.com:metaphor/lein-flyway.git"}
