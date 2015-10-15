@@ -1,4 +1,4 @@
-(defproject com.github.metaphor/lein-flyway "1.1-SNAPSHOT"
+(defproject com.github.metaphor/lein-flyway "1.1"
   :description "Leiningen Plugin for Database Migration Tool Flyway"
   :url "https://github.com/metaphor/lein-flyway"
   :license {:name "Eclipse Public License - v 1.0"
