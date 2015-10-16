@@ -11,7 +11,7 @@ This plugin is alpha version, expecting defects.
 ### Latest stable version
 
 ```clojure
-[com.github.metaphor/lein-flyway "1.1"]
+[com.github.metaphor/lein-flyway "1.1.1"]
 ```
 
 aligned with flyway version 3.2.1
