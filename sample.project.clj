@@ -4,12 +4,12 @@
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.7.0-alpha3"]]
 
-  :profiles {:dev {:dependencies [[mysql/mysql-connector-java "5.1.34"]]}}
+  :profiles {:dev {:dependencies [[mysql/mysql-connector-java "5.1.36"]]}}
 
   ;; Usually you need put your migrations in resource classpath
   :resource-paths ["src-resources"]
 
-  :plugins [[com.github.metaphor/lein-flyway "1.1-SNAPSHOT"]]
+  :plugins [[com.github.metaphor/lein-flyway "1.1.1"]]
 
   ;; Flyway Database Migration configuration
   :flyway {
@@ -39,8 +39,8 @@
            :placeholder-replacement false
            :placeholder-prefix "${"
            :placeholder-suffix  "}"
-           :resolvers  ['com.mycompany.proj.CustomResolver' 'com.mycompany.proj.AnotherResolver']
-           :callbacks ['com.mycompany.proj.CustomCallback' 'com.mycompany.proj.AnotherCallback']
+           :resolvers  ["com.mycompany.proj.CustomResolver" "com.mycompany.proj.AnotherResolver"]
+           :callbacks ["com.mycompany.proj.CustomCallback" "com.mycompany.proj.AnotherCallback"]
            :target "1.1"
            :out-of-order false
            :validate-on-migrate true
