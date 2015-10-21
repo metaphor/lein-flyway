@@ -10,9 +10,7 @@ This plugin is alpha version, expecting defects.
 
 ### Latest stable version
 
-```clojure
-[com.github.metaphor/lein-flyway "1.1.1"]
-```
+[![Clojars Project](http://clojars.org/com.github.metaphor/lein-flyway/latest-version.svg)](http://clojars.org/com.github.metaphor/lein-flyway)
 
 aligned with flyway version 3.2.1
 
