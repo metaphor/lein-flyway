@@ -2,14 +2,14 @@
   :description "sample"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
-  :dependencies [[org.clojure/clojure "1.7.0-alpha3"]]
+  :dependencies [[org.clojure/clojure "1.8.0"]]
 
   :profiles {:dev {:dependencies [[mysql/mysql-connector-java "5.1.36"]]}}
 
   ;; Usually you need put your migrations in resource classpath
   :resource-paths ["src-resources"]
 
-  :plugins [[com.github.metaphor/lein-flyway "1.1.1"]]
+  :plugins [[com.github.metaphor/lein-flyway "4.0.0"]]
 
   ;; Flyway Database Migration configuration
   :flyway {;; Optional - When a config path is passed, that config will be used in place of the below options.
