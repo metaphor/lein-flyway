@@ -1,0 +1,26 @@
+{:flyway {;; Database connection
+          :driver                    "com.mysql.jdbc.Driver"
+          :url                       "jdbc:mysql://localhost/happyzoo"
+          :user                      "root"
+          :password                  ""
+          :schemas                   ["schema1" "schema2"]
+          ;; Migration locations
+          :locations                 ["classpath:/migration1" "migrations2" "filesystem:/sql-migrations"]
+          ;; Baseline
+          :baseline-on-migrate       true
+          :baseline-version          5
+          :baseline-description      "Sample Migration"
+          :table                     "my_schema_versions"
+          :sql-migration-prefix      "V"
+          :sql-migration-separator   "__"
+          :sql-migration-suffix      ".sql"
+          :encoding                  "UTF-8"
+          :placeholders              {"token1" "token1-value"
+                                      "token2" "token2-value"}
+          :placeholder-replacement   false
+          :placeholder-prefix        "${"
+          :placeholder-suffix        "}"
+          :target                    "1.1"
+          :out-of-order              false
+          :validate-on-migrate       true
+          :clean-on-validation-error false}}

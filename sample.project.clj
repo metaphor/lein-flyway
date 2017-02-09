@@ -12,7 +12,8 @@
   :plugins [[com.github.metaphor/lein-flyway "1.1.1"]]
 
   ;; Flyway Database Migration configuration
-  :flyway {
+  :flyway {;; Optional - When a config path is passed, that config will be used in place of the below options.
+           :config-path "flyway.properties"
            ;; Database connection
            :driver "com.mysql.jdbc.Driver"
            :url "jdbc:mysql://localhost/happyzoo"
