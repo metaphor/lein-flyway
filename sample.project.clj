@@ -9,7 +9,7 @@
   ;; Usually you need put your migrations in resource classpath
   :resource-paths ["src-resources"]
 
-  :plugins [[com.github.metaphor/lein-flyway "4.0.0"]]
+  :plugins [[com.github.metaphor/lein-flyway "4.0.1"]]
 
   ;; Flyway Database Migration configuration
   :flyway {;; Optional - When a config path is passed, that config will be used in place of the below options.

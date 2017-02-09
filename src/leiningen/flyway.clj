@@ -1,7 +1,7 @@
 (ns leiningen.flyway
   (:require [leiningen.core.eval :refer [eval-in-project]]))
 
-(def ^:private CURRENT_VERSION "1.2.0-SNAPSHOT")
+(def ^:private CURRENT_VERSION "4.0.1")
 
 (defn flyway
   "Run the flyway plugin."
