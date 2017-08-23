@@ -16,10 +16,9 @@
            :config-path "flyway.properties"
            ;; Database connection
            :driver "com.mysql.jdbc.Driver"
-           :url "jdbc:mysql://localhost/happyzoo"
-           :user "root"
-           :password ""
-
+           :url #=(eval (or (System/getenv "url") "jdbc:mysql://localhost/happyzoo"))
+           :user #=(eval (or (System/getenv "user") "root"))
+           :password #=(eval (or (System/getenv "password") ""))
            :schemas ["schema1" "schema2"]
            ;; Migration locations
            :locations ["classpath:/migration1" "migrations2" "filesystem:/sql-migrations"]
