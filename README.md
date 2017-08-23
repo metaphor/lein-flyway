@@ -1,12 +1,12 @@
-#lein-flyway
+# lein-flyway
 
-##Intro
+## Intro
 
-Leiningen Plugin for Database Migration Tool [Flyway](http://flywaydb.org/).
+Leiningen plugin for database migration tool [flyway](http://flywaydb.org/).
 
 This plugin is alpha version, expecting defects.
 
-##Usage
+## Usage
 
 ### Latest stable version
 
@@ -35,8 +35,9 @@ And *subtask* includes following flyway aligned tasks,
 ### Contributors
 
 [Mark Hinshaw](https://github.com/mahinshaw)
+[Yan Qian](https://github.com/qianyan)
 
-##LICENSE
+## LICENSE
 
 Copyright © Zhiheng Li
 
