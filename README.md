@@ -1,4 +1,5 @@
 # lein-flyway
+[![CircleCI](https://circleci.com/gh/metaphor/lein-flyway.svg?style=shield)](https://circleci.com/gh/metaphor/lein-flyway)
 
 ## Intro
 
