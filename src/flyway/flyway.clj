@@ -56,10 +56,10 @@
     (when-let [contents (try (FileCopyUtils/copyToString (io/reader (io/input-stream config-path)))
                             (catch Exception e
                               (println (.getMessage e))))]
-     (let [props (Properties.)
-           contents (str/replace contents "\\" "\\\\")]
-       (try (.load props (StringReader. contents))
-            props
+     (let [contents (str/replace contents "\\" "\\\\")]
+       (try
+         (doto (Properties.)
+           (.load (StringReader. contents)))
             (catch Exception e
               (println (.getMessage e))))))
     (println "Config path does not exist:" config-path)))
