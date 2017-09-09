@@ -6,8 +6,7 @@
            [java.util Properties]
            [org.apache.commons.io FilenameUtils]
            [org.flywaydb.core Flyway]
-           [org.flywaydb.core.internal.util FileCopyUtils]
-           [org.flywaydb.core.internal.util.jdbc DriverDataSource]
+           [org.flywaydb.core.internal.util FileCopyUtils] 
            [org.flywaydb.core.internal.info MigrationInfoDumper]))
 
 (def ^{:private true
