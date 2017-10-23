@@ -16,6 +16,8 @@
 
   :test-refresh {:changes-only true}
 
+  :global-vars {*warn-on-reflection* true}
+
   :scm {:url "git@github.com:metaphor/lein-flyway.git"}
   :pom-addition [:developers [:developer
                               [:name "Zhiheng Li"]
