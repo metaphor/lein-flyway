@@ -43,6 +43,7 @@ And *subtask* includes following flyway aligned tasks,
 
 * [Mark Hinshaw](https://github.com/mahinshaw)
 * [Yan Qian](https://github.com/qianyan)
+* [Tom Parker](https://github.com/palfrey)
 
 ## LICENSE
 
