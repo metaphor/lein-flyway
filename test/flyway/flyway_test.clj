@@ -33,7 +33,7 @@
 
                  ;; invalid key
                  :improper-key              true})
-(def properties (sut/make-properties config-map))
+(def ^Properties properties (sut/make-properties config-map))
 
 (deftest make-properties
   (is (instance? Properties properties))

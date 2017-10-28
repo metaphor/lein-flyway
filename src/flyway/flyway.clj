@@ -79,10 +79,10 @@
       (#(doseq [[k v] refined-keys]
           (when v
             (cond
-              (vector? v) (.setProperty % (make-flyway-prop k) (str/join "," v))
+              (vector? v) (.setProperty ^Properties % (make-flyway-prop k) (str/join "," v))
               (map? v)    (doseq [[k2 v2] v]
-                            (.setProperty % (str (make-flyway-prop k) "." (name k2)) (str v2)))
-              :else       (.setProperty % (make-flyway-prop k) (str v)))))))))
+                            (.setProperty ^Properties % (str (make-flyway-prop k) "." (name k2)) (str v2)))
+              :else       (.setProperty ^Properties % (make-flyway-prop k) (str v)))))))))
 
 (defn ^Properties make-config
   "Given a config, if the config contains a `:config-path`, get the config from that path.
