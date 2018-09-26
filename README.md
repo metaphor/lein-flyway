@@ -13,7 +13,7 @@ This plugin is alpha version, expecting defects.
 
 [![Clojars Project](http://clojars.org/com.github.metaphor/lein-flyway/latest-version.svg)](http://clojars.org/com.github.metaphor/lein-flyway)
 
-aligned with flyway version 4.0.3
+aligned with flyway version 5.1.4
 
 ### Configuration
 lein-flyway tries to align with offical configuration properties, please refer to [sample.project.clj](https://github.com/metaphor/lein-flyway/blob/master/sample.project.clj) for configuration details.
