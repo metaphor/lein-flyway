@@ -41,9 +41,7 @@ And *subtask* includes following flyway aligned tasks,
 
 ### Contributors
 
-* [Mark Hinshaw](https://github.com/mahinshaw)
-* [Yan Qian](https://github.com/qianyan)
-* [Tom Parker](https://github.com/palfrey)
+See [Github contributors](https://github.com/metaphor/lein-flyway/graphs/contributors)
 
 ## LICENSE
 
