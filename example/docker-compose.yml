@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    command: [
+        'mysqld',
+        '--innodb-buffer-pool-size=10M',
+        '--character-set-server=utf8mb4',
+        '--collation-server=utf8mb4_general_ci'
+      ]
+    environment:
+      - "MYSQL_DATABASE=leinflyway"
+      - "MYSQL_ROOT_PASSWORD=donotuseroot"
+    ports:
+      - "8806:3306"

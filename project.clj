@@ -1,4 +1,4 @@
-(defproject com.github.metaphor/lein-flyway "6.0.0"
+(defproject com.github.metaphor/lein-flyway "6.0.0-SNAPSHOT"
   :description "Leiningen Plugin for Database Migration Tool Flyway"
   :url "https://github.com/metaphor/lein-flyway"
   :license {:name "Eclipse Public License - v1.0"
@@ -6,10 +6,10 @@
   :min-lein-version "2.0.0"
   :eval-in-leiningen true
 
-  :dependencies [[org.flywaydb/flyway-core "5.1.4"]
+  :dependencies [[org.flywaydb/flyway-core "5.2.4"]
                  [commons-io "2.4"]]
 
-  :profiles {:dev {:dependencies [[org.clojure/clojure "1.8.0"]
+  :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]
                                   [mysql/mysql-connector-java "5.1.36"]]
                    :plugins      [[com.jakemccrary/lein-test-refresh "0.15.0"]]
                    }}
