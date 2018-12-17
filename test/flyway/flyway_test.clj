@@ -28,18 +28,15 @@
 (def config-map {:user                      "root"
                  :locations                 ["classpath:/migration1" "migrations2" "filesystem:/sql-migrations"]
                  :encoding                  "UTF-8"
-                 :placeholders              {"token1" "token1-value"
-                                             :token2 "token2-value"}
-
-                 ;; invalid key
+                 :placeholders              {"token1" "token1-value" :token2 "token2-value"}
                  :improper-key              true})
+
 (def ^Properties properties (sut/make-properties config-map))
 
 (deftest make-properties
   (is (instance? Properties properties))
-  (is (not (.getProperty properties "flyway.improperKey")))
-  ;; the placeholders map will create 2 keys.
-  (is (= 5 (count properties)))
+  (is (= 6 (count properties)))
+  (is (= (:improper-key properties "flyway.improperKey")))
   (is (= (:user config-map) (.getProperty properties "flyway.user")))
   (is (= (:encoding config-map) (.getProperty properties "flyway.encoding")))
   (is (= (str/join "," (:locations config-map)) (.getProperty properties "flyway.locations")))

@@ -1,7 +1,7 @@
-(defproject com.github.metaphor/lein-flyway "5.1.4"
+(defproject com.github.metaphor/lein-flyway "6.0.0"
   :description "Leiningen Plugin for Database Migration Tool Flyway"
   :url "https://github.com/metaphor/lein-flyway"
-  :license {:name "Eclipse Public License - v 1.0"
+  :license {:name "Eclipse Public License - v1.0"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :min-lein-version "2.0.0"
   :eval-in-leiningen true

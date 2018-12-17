@@ -6,41 +6,9 @@
            [java.util Properties]
            [org.apache.commons.io FilenameUtils]
            [org.flywaydb.core Flyway]
-           [org.flywaydb.core.internal.util FileCopyUtils] 
+           [org.flywaydb.core.internal.util FileCopyUtils]
            [org.flywaydb.core.internal.info MigrationInfoDumper]))
 
-(def ^{:private true
-       :doc     "Refer to documentation for defaults. https://flywaydb.org/documentation/commandline/migrate"}
-  supported-config-keys [:url
-                         :driver
-                         :user
-                         :password
-                         :schemas
-                         :table
-                         :locations
-                         :jar-dirs
-                         :sql-migration-prefix
-                         :repeatable-sql-migration-prefix
-                         :sql-migration-separator
-                         :sql-migration-suffix
-                         :encoding
-                         :placeholder-replacement
-                         :placeholders
-                         :placeholder-prefix
-                         :placeholder-suffix
-                         :resolvers
-                         :skip-default-resolvers
-                         :callbacks
-                         :skip-default-callbacks
-                         :target
-                         :out-of-order
-                         :validate-on-migrate
-                         :clean-on-validation-error
-                         :ignore-future-migrations
-                         :clean-disabled
-                         :baseline-on-migrate
-                         :baseline-version
-                         :baseline-description])
 
 (defn get-edn-config
   "Returns the value at `:flyway` in an edn map."
@@ -74,15 +42,14 @@
 
 (defn ^Properties make-properties
   [config-map]
-  (let [refined-keys (select-keys config-map supported-config-keys)]
-    (doto (Properties.)
-      (#(doseq [[k v] refined-keys]
-          (when v
-            (cond
-              (vector? v) (.setProperty ^Properties % (make-flyway-prop k) (str/join "," v))
-              (map? v)    (doseq [[k2 v2] v]
-                            (.setProperty ^Properties % (str (make-flyway-prop k) "." (name k2)) (str v2)))
-              :else       (.setProperty ^Properties % (make-flyway-prop k) (str v)))))))))
+  (doto (Properties.)
+    (#(doseq [[k v] config-map]
+        (when v
+          (cond
+            (vector? v) (.setProperty ^Properties % (make-flyway-prop k) (str/join "," v))
+            (map? v)    (doseq [[k2 v2] v]
+                          (.setProperty ^Properties % (str (make-flyway-prop k) "." (name k2)) (str v2)))
+            :else       (.setProperty ^Properties % (make-flyway-prop k) (str v))))))))
 
 (defn ^Properties make-config
   "Given a config, if the config contains a `:config-path`, get the config from that path.
