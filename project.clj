@@ -6,8 +6,7 @@
   :min-lein-version "2.0.0"
   :eval-in-leiningen true
 
-  :dependencies [[org.flywaydb/flyway-core "5.2.4"]
-                 [commons-io "2.4"]]
+  :dependencies [[org.flywaydb/flyway-core "5.2.4"]]
 
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]
                                   [mysql/mysql-connector-java "5.1.36"]]

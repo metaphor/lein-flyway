@@ -1,10 +1,10 @@
 (ns flyway.flyway
   (:require [clojure.edn :as edn]
             [clojure.java.io :as io]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [flyway.util :as util])
   (:import [java.io File PushbackReader StringReader]
            [java.util Properties]
-           [org.apache.commons.io FilenameUtils]
            [org.flywaydb.core Flyway]
            [org.flywaydb.core.internal.util FileCopyUtils]
            [org.flywaydb.core.internal.info MigrationInfoDumper]))
@@ -58,7 +58,7 @@
   When a properties file exists, the properties should follow as seen in the flyway documentation."
   [config-map]
   (let [config-path (:config-path config-map)
-        ext         (FilenameUtils/getExtension config-path)
+        ext         (util/get-file-extension config-path)
         config      (cond
                       (= "edn" ext)             (get-edn-config config-path)
                       (or (= "conf" ext)
@@ -67,11 +67,6 @@
     (if (map? config)
       (make-properties config)
       config)))
-
-(defn ^Flyway flyway [config]
-  (let [props (make-config config)]
-    (doto (Flyway.)
-      (.configure props))))
 
 (defn clean [^Flyway flyway]
   (. flyway clean))
